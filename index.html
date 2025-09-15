@@ -7,15 +7,108 @@
   <meta name="description" content="OinkSmart Homes brings tech-forward upgrades to Seattle: EV charger installs, Tesla integrations, and smart lighting controls. Licensed, bonded, insured. Fast quotes & clean installs for modern living." />
   <link rel="canonical" href="https://www.example.com/oinksmart-homes" />
   <meta name="robots" content="index,follow" />
-  <!-- (head meta unchanged) -->
+  
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="OinkSmart Homes | EV Chargers, Tesla Integrations & Smart Lighting" />
+  <meta property="og:description" content="Seattle smart-home upgrades for tech professionals: EV chargers, Tesla integrations, and lighting controls. Fast quotes, clean installs, permits handled when required." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.example.com/oinksmart-homes" />
+  <meta property="og:image" content="https://www.example.com/assets/oinksmart/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Styles: fast, accessible, no external deps -->
   <style>
-    /* (styles unchanged) */
+    :root{
+      --bg:#0b0c10; --surface:#11131a; --card:#171a23; --text:#e7e9ee; --muted:#98a2b3; --brand:#ff4d6d; --brand-2:#7dd3fc; --ok:#10b981;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.25)
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(1000px 600px at 10% -10%,rgba(125,211,252,.25),transparent),linear-gradient(180deg,rgba(255,77,109,.08),transparent 30%),var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,Inter,system-ui,"Helvetica Neue",Arial,sans-serif}
+    a{color:inherit}
+    .container{max-width:1180px;margin:auto;padding:0 20px}
+    header{position:sticky;top:0;backdrop-filter:saturate(140%) blur(10px);background:linear-gradient(180deg,rgba(11,12,16,.85),rgba(11,12,16,.6));z-index:10;border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .brand svg{width:28px;height:28px}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--brand),#ff7a8f);color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:var(--shadow);border:0;cursor:pointer}
+    .btn.secondary{background:transparent;border:1px solid rgba(231,233,238,.15)}
+    .grid{display:grid;gap:22px}
+    .hero{padding:72px 0 36px}
+    .hero h1{font-size:40px;line-height:1.1;margin:12px 0 12px}
+    .hero p{color:var(--muted);max-width:720px}
+    .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .badges{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0;color:#d1d5db}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.05);padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.08)}
+    section{padding:42px 0}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:20px}
+    .features{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .steps{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+    .list li{display:flex;gap:10px;align-items:flex-start}
+    .list .dot{width:8px;height:8px;border-radius:50%;background:var(--brand);display:inline-block;margin-top:10px}
+    .kpis{display:flex;gap:18px;flex-wrap:wrap}
+    .kpi{flex:1 1 160px;background:rgba(125,211,252,.08);border:1px solid rgba(125,211,252,.25);padding:16px;border-radius:14px}
+    .kpi strong{font-size:22px}
+    .two-col{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start}
+    .service-areas{display:flex;gap:12px;flex-wrap:wrap}
+    .tag{padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04)}
+    .faq-item{border:1px solid rgba(255,255,255,.08);border-radius:14px;margin-bottom:12px;overflow:hidden;background:rgba(255,255,255,.03)}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;cursor:pointer}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 16px}
+    .faq-a.open{padding:0 16px 14px}
+    footer{padding:36px 0 56px;color:#cbd5e1}
+    .tiny{font-size:12px;color:#aab0bb}
+    .notice{border-left:3px solid var(--brand);padding:10px 12px;background:rgba(255,77,109,.06);border-radius:8px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    label{display:block;margin-bottom:6px}
+    input,textarea{width:100%;background:var(--surface);color:var(--text);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px;outline:none}
+    input:focus,textarea:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(255,77,109,.25)}
+    fieldset input{margin-right:8px}
+    @media(min-width:900px){.hero h1{font-size:54px}}
   </style>
+
+  <!-- JSON-LD: LocalBusiness + Services + FAQ for rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "OinkSmart Homes",
+    "image": "https://www.example.com/assets/oinksmart/og.jpg",
+    "url": "https://www.example.com/oinksmart-homes",
+    "telephone": "+1-206-681-0020",
+    "priceRange": "$$$",
+    "address": {"@type":"PostalAddress", "addressLocality":"Seattle", "addressRegion":"WA", "addressCountry":"US"},
+    "areaServed": ["Seattle","Redmond","Bellevue","Kirkland","Issaquah","Bothell"],
+    "sameAs": []
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "EV Charger Installation & Tesla Integrations",
+    "provider": {"@type":"LocalBusiness","name":"OinkSmart Homes"},
+    "areaServed": {"@type":"City","name":"Seattle"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question","name": "Do you handle permits and utility coordination?","acceptedAnswer": {"@type": "Answer","text": "Yes. We handle permitting and coordination with the utility when required for EV chargers and service panel changes."}},
+      {"@type": "Question","name": "What EV brands do you support?","acceptedAnswer": {"@type": "Answer","text": "Tesla Wall Connector, ChargePoint, Emporia, Enphase, and other Level 2 chargers. We also integrate with popular smart panels and load management devices."}},
+      {"@type": "Question","name": "How fast can you install?","acceptedAnswer": {"@type": "Answer","text": "Typical Level 2 installs are completed in 1 day after site assessment; panel upgrades may add 1–2 days."}}
+    ]
+  }
+  </script>
 </head>
 <body>
   <header>
     <div class="container nav">
       <a class="brand" href="#top" aria-label="OinkSmart Homes home">
+        <!-- Minimal pig icon -->
         <svg viewBox="0 0 48 48" role="img" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="24" cy="24" r="22" stroke="currentColor" opacity=".25" />
           <path d="M16 26c0-6 4.5-10 10-10 4.5 0 6 2 8 3l4-1-2 5c0 7-5 11-12 11s-8-4-8-8Z" fill="currentColor" opacity=".85" />
@@ -24,10 +117,10 @@
         <span>OinkSmart Homes</span>
       </a>
       <nav>
-        <a class="btn secondary" href="#services">Services</a>
-        <a class="btn secondary" href="#pricing">Pricing</a>
+        <button class="btn secondary" id="langToggle" type="button">中 / EN</button>
+        <a class="btn secondary" href="#services" id="nav-services">Services</a>
+        <a class="btn secondary" href="#pricing" id="nav-pricing">Pricing</a>
         <a class="btn" href="#quote" id="cta-top">Get a Fast Quote</a>
-        <button id="langToggle" class="btn secondary" style="margin-left:10px">中 / EN</button>
       </nav>
     </div>
   </header>
@@ -42,48 +135,157 @@
               <span class="badge">✅ Licensed • Bonded • Insured</span>
               <span class="badge">⚡ EV • Tesla • Smart Lighting</span>
             </div>
-            <h1>EV Chargers, Tesla Integrations & Smart Lighting —
+            <h1 id="h1">EV Chargers, Tesla Integrations & Smart Lighting —
               <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">installed cleanly, fast, and to code</span>
             </h1>
-            <p>Serving Seattle, Redmond, Bellevue, and Kirkland. We deliver tech-forward electrical upgrades that look great and work flawlessly. Perfect for modern homes and busy tech professionals.</p>
+            <p id="hero-p">Serving Seattle, Redmond, Bellevue, and Kirkland. We deliver tech-forward electrical upgrades that look great and work flawlessly. Perfect for modern homes and busy tech professionals.</p>
             <div class="cta">
               <a class="btn" href="#quote" id="cta-hero">Get My Price</a>
-              <a class="btn secondary" href="#portfolio">See Recent Installs</a>
+              <a class="btn secondary" href="#portfolio" id="cta-portfolio">See Recent Installs</a>
+            </div>
+            <div class="kpis" style="margin-top:18px">
+              <div class="kpi"><strong>300+</strong><br/>Smart upgrades completed</div>
+              <div class="kpi"><strong>4.9★</strong><br/>Average client rating</div>
+              <div class="kpi"><strong>1–2 days</strong><br/>Typical L2 install timeline</div>
             </div>
           </div>
           <div class="card" aria-label="hero visual">
-            <!-- (hero image unchanged) -->
+            <picture>
+              <source srcset="https://images.unsplash.com/photo-1617727553255-9b81b7baf512?q=80&w=1200&auto=format&fit=crop" type="image/jpeg" />
+              <img src="https://images.unsplash.com/photo-1617727553255-9b81b7baf512?q=80&w=800&auto=format&fit=crop" alt="Clean EV charger install in a modern Seattle garage" loading="lazy" style="width:100%;border-radius:12px" />
+            </picture>
+            <p class="tiny">Photos representative. We provide neat conduit runs, labeling, and panel schedules.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES (unchanged) -->
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <h2 id="labelServices">Smart Home Upgrade Services</h2>
+        <div class="grid features" style="margin-top:14px">
+          <article class="card">
+            <h3 id="svc-ev">Level 2 EV Charger Installation</h3>
+            <p class="tiny" id="svc-ev-sub">Tesla Wall Connector, ChargePoint, Emporia & more</p>
+            <ul class="list">
+              <li><span class="dot"></span><span id="svc-ev-li1">Load calculation, breaker sizing, and to-code wiring</span></li>
+              <li><span class="dot"></span><span id="svc-ev-li2">Neat surface or in-wall conduit runs</span></li>
+              <li><span class="dot"></span><span id="svc-ev-li3">Optional load management devices for limited capacity</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 id="svc-tesla">Tesla Integrations</h3>
+            <p class="tiny" id="svc-tesla-sub">Wall Connector, Powerwall coordination, app setup</p>
+            <ul class="list">
+              <li><span class="dot"></span><span id="svc-tesla-li1">Seamless pairing and commissioning</span></li>
+              <li><span class="dot"></span><span id="svc-tesla-li2">Panel labeling and documentation included</span></li>
+              <li><span class="dot"></span><span id="svc-tesla-li3">Utility coordination when service upgrades are needed</span></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3 id="svc-light">Smart Lighting & Controls</h3>
+            <p class="tiny" id="svc-light-sub">Lutron, Caséta, Philips Hue, dimmers & scenes</p>
+            <ul class="list">
+              <li><span class="dot"></span><span id="svc-light-li1">Room-by-room scene design & tuning</span></li>
+              <li><span class="dot"></span><span id="svc-light-li2">Voice & app control with HomeKit/Alexa/Google</span></li>
+              <li><span class="dot"></span><span id="svc-light-li3">Clean wall plates & designer finishes</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <!-- PRICING / PROMO -->
+    <!-- PROCESS -->
+    <section id="process">
+      <div class="container">
+        <h2 id="labelProcess">Simple, Transparent Process</h2>
+        <div class="grid steps" style="margin-top:14px">
+          <div class="card"><h3 id="proc1">1) Fast Assessment</h3><p id="proc1p">Send photos of your panel, charger location, and driveway/garage. We quote quickly with a clear scope.</p></div>
+          <div class="card"><h3 id="proc2">2) Permit & Schedule</h3><p id="proc2p">We handle permit paperwork (as needed) and coordinate the day that works for you.</p></div>
+          <div class="card"><h3 id="proc3">3) Clean Install</h3><p id="proc3p">Neat conduit runs, labeled breakers, and commissioning. We walk through everything with you.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / SOCIAL PROOF -->
+    <section id="portfolio">
+      <div class="container">
+        <h2 id="labelPortfolio">Recent Installs</h2>
+        <div class="grid features" style="margin-top:14px">
+          <figure class="card"><img loading="lazy" alt="Tesla Wall Connector neatly installed" src="https://images.unsplash.com/photo-1621259182978-fbf93132c2e8?q=80&w=900&auto=format&fit=crop" style="width:100%;border-radius:12px"/><figcaption class="tiny" id="cap1">Tesla Wall Connector with tidy conduit and labeling</figcaption></figure>
+          <figure class="card"><img loading="lazy" alt="Smart lighting dimmer scene" src="https://images.unsplash.com/photo-1492538368677-f6e0afe31dcc?q=80&w=900&auto=format&fit=crop" style="width:100%;border-radius:12px"/><figcaption class="tiny" id="cap2">Lutron dimmers with evening scene preset</figcaption></figure>
+          <figure class="card"><img loading="lazy" alt="Garage EV charger with organized panel" src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=900&auto=format&fit=crop" style="width:100%;border-radius:12px"/><figcaption class="tiny" id="cap3">Garage EV charger + updated panel schedule</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING / PROMO (no dollar values) -->
     <section id="pricing">
       <div class="container">
-        <h2>Transparent Pricing</h2>
+        <h2 id="labelPricing">Transparent Pricing</h2>
         <div class="grid two-col" style="margin-top:14px">
           <div class="card">
-            <h3>Level 2 EV Charger (typical)</h3>
-            <p><strong>Typical installation with existing capacity and short run*</strong>.</p>
+            <h3 id="price1">Level 2 EV Charger (typical)</h3>
+            <p id="price1p"><strong>With existing capacity and short run*</strong>.</p>
             <ul class="list">
-              <li><span class="dot"></span><span>Site assessment & load calc</span></li>
-              <li><span class="dot"></span><span>Dedicated breaker & wiring to charger</span></li>
-              <li><span class="dot"></span><span>Commissioning & walkthrough</span></li>
+              <li><span class="dot"></span><span id="price1li1">Site assessment & load calc</span></li>
+              <li><span class="dot"></span><span id="price1li2">Dedicated breaker & wiring to charger</span></li>
+              <li><span class="dot"></span><span id="price1li3">Commissioning & walkthrough</span></li>
             </ul>
-            <p class="tiny">*Final details depend on distance, wall type, attic/crawl access, and panel capacity.</p>
+            <p class="tiny" id="price1note">*Final price depends on distance, wall type, attic/crawl access, and panel capacity.</p>
           </div>
           <div class="card">
-            <h3>Panel Upgrade / Load Management</h3>
-            <p><strong>Custom quoted</strong> after assessment.</p>
+            <h3 id="price2">Panel Upgrade / Load Management</h3>
+            <p id="price2p"><strong>Custom quoted</strong> after assessment.</p>
             <ul class="list">
-              <li><span class="dot"></span><span>200A main panel upgrades</span></li>
-              <li><span class="dot"></span><span>Smart load-shedding devices</span></li>
-              <li><span class="dot"></span><span>Utility & inspection coordination</span></li>
+              <li><span class="dot"></span><span id="price2li1">200A main panel upgrades</span></li>
+              <li><span class="dot"></span><span id="price2li2">Smart load-shedding devices</span></li>
+              <li><span class="dot"></span><span id="price2li3">Utility & inspection coordination</span></li>
             </ul>
           </div>
+        </div>
+        <div class="notice" style="margin-top:14px" id="bundle">Looking to bundle lighting upgrades or a Tesla integration? Ask about <strong>package pricing</strong> for multi-scope installs.</div>
+      </div>
+    </section>
+
+    <!-- SERVICE AREA -->
+    <section id="areas">
+      <div class="container">
+        <h2 id="labelAreas">Serving Seattle & Eastside</h2>
+        <div class="service-areas" aria-label="service areas">
+          <span class="tag">Seattle</span><span class="tag">Redmond</span><span class="tag">Bellevue</span><span class="tag">Kirkland</span><span class="tag">Issaquah</span><span class="tag">Bothell</span><span class="tag">Shoreline</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews">
+      <div class="container">
+        <h2 id="labelReviews">What Clients Say</h2>
+        <div class="grid features" style="margin-top:14px">
+          <blockquote class="card" id="rev1">“Scheduling was fast, the install was super clean, and they labeled everything. My Model Y charges perfectly.”<br><span class="tiny">— Alex T., Bellevue</span></blockquote>
+          <blockquote class="card" id="rev2">“They handled the permit and gave me options to avoid a full panel upgrade. Professional and on time.”<br><span class="tiny">— Priya S., Redmond</span></blockquote>
+          <blockquote class="card" id="rev3">“Lighting scenes are a game-changer for our home office and nursery. Highly recommend.”<br><span class="tiny">— Daniel K., Seattle</span></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2 id="labelFAQ">FAQ</h2>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span id="faq1q">Do you help choose the right charger?</span><span>＋</span></button>
+          <div class="faq-a"><p id="faq1a">Yes. We recommend based on your vehicle(s), panel capacity, and app preferences (Tesla, ChargePoint, Emporia, etc.).</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span id="faq2q">Is a permit required?</span><span>＋</span></button>
+          <div class="faq-a"><p id="faq2a">Most EV circuits require an electrical permit. We handle it and schedule inspections when needed.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span id="faq3q">How do you keep the install looking clean?</span><span>＋</span></button>
+          <div class="faq-a"><p id="faq3a">We use tidy conduit runs, secure strapping, proper bends, and label your panel schedule. We discuss concealed vs. surface routes during quoting.</p></div>
         </div>
       </div>
     </section>
@@ -91,65 +293,235 @@
     <!-- QUOTE FORM -->
     <section id="quote">
       <div class="container">
-        <h2>Get a Fast Quote</h2>
+        <h2 id="labelQuote">Get a Fast Quote</h2>
         <div class="grid two-col" style="margin-top:14px">
-          <form class="card" id="leadForm" name="leadForm">
-            <!-- (inputs unchanged) -->
+          <form class="card" id="leadForm" name="leadForm" method="post" action="" data-script-url="https://script.google.com/macros/s/AKfycbyUXbFLfVbXiWI9bfsEgdEyA8K3TYNV3AsFSUnBh8OhJJdzalNTi55CMrAWy_RcKrPD/exec">
+            <div class="grid" style="grid-template-columns:1fr 1fr;gap:12px">
+              <div>
+                <label for="name" id="lblName">Full Name</label>
+                <input id="name" name="name" required placeholder="Your name" />
+              </div>
+              <div>
+                <label for="phone" id="lblPhone">Phone</label>
+                <input id="phone" name="phone" inputmode="tel" required placeholder="206‑xxx‑xxxx" />
+              </div>
+              <div>
+                <label for="email" id="lblEmail">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label for="city" id="lblCity">City</label>
+                <input id="city" name="city" placeholder="Seattle / Bellevue / …" />
+              </div>
+            </div>
+            <fieldset style="margin-top:12px;border:0;padding:0">
+              <legend class="sr-only">Services</legend>
+              <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px">
+                <label class="tag"><input type="checkbox" name="services" value="ev" /> <span id="optEV">EV Charger</span></label>
+                <label class="tag"><input type="checkbox" name="services" value="tesla" /> <span id="optTesla">Tesla Integration</span></label>
+                <label class="tag"><input type="checkbox" name="services" value="lighting" /> <span id="optLight">Smart Lighting</span></label>
+                <label class="tag"><input type="checkbox" name="services" value="panel" /> <span id="optPanel">Panel Upgrade</span></label>
+              </div>
+            </fieldset>
+            <label for="details" id="lblDetails" style="display:block;margin-top:12px">Project Details</label>
+            <textarea id="details" name="details" rows="4" placeholder="Tell us about your panel, distance to charger, wall type, and photos link (optional)"></textarea>
             <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
               <button class="btn" type="submit" id="cta-form">Get My Price</button>
-              <span class="tiny">or call <a href="tel:+12066810020">(206) 681‑0020</a></span>
+              <span class="tiny" id="orCall">or call <a href="tel:+12066810020">(206) 681‑0020</a></span>
             </div>
             <input type="hidden" name="campaign" value="oinksmart-homes" />
             <input type="hidden" name="utm_source" value="google-ads" />
           </form>
           <div class="card">
-            <h3>What to include for the fastest quote</h3>
+            <h3 id="fastest">What to include for the fastest quote</h3>
             <ul class="list">
-              <li><span class="dot"></span><span>Photos of main panel and charger location</span></li>
-              <li><span class="dot"></span><span>Approximate wire distance and wall type</span></li>
+              <li><span class="dot"></span><span id="fast1">Photos of main panel (with door open) and subpanel if any</span></li>
+              <li><span class="dot"></span><span id="fast2">Where you want the charger mounted; approximate wire distance</span></li>
+              <li><span class="dot"></span><span id="fast3">Attic/crawlspace access info; finished vs. unfinished walls</span></li>
             </ul>
+            <p class="tiny" id="privacy">We never share your info.（我们不会泄露您的信息）</p>
           </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container">
-      <!-- (footer unchanged) -->
+      <div class="grid two-col">
+        <div>
+          <div class="brand"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="22" stroke="currentColor" opacity=".25" /><path d="M16 26c0-6 4.5-10 10-10 4.5 0 6 2 8 3l4-1-2 5c0 7-5 11-12 11s-8-4-8-8Z" fill="currentColor" opacity=".85" /></svg><strong>OinkSmart Homes</strong></div>
+          <p class="tiny">Powered by Nexo Custom Interior • Licensed, Bonded, Insured • Seattle, WA</p>
+        </div>
+        <div>
+          <p class="tiny">© <span id="year"></span> OinkSmart Homes. All rights reserved. <a href="/privacy">Privacy</a> • <a href="/terms">Terms</a></p>
+        </div>
+      </div>
     </div>
   </footer>
 
+  <!-- Minimal JS + i18n + Google Sheets submission -->
   <script>
-    // FAQ accordion unchanged
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(function(item){
+      var q=item.querySelector('.faq-q'); var a=item.querySelector('.faq-a');
+      q.addEventListener('click',function(){
+        var expanded=q.getAttribute('aria-expanded')==='true';
+        q.setAttribute('aria-expanded',!expanded);
+        a.style.maxHeight=expanded?0:(a.scrollHeight+"px");
+        a.classList.toggle('open',!expanded);
+      });
+    });
 
     // Footer year
     document.getElementById('year').textContent=new Date().getFullYear();
 
-    // Form submission to Google Sheets via Apps Script
-    document.getElementById('leadForm').addEventListener('submit',function(e){
-      e.preventDefault();
-      var data=new FormData(this);
-      fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec',{method:'POST',body:data})
-      .then(r=>r.json()).then(res=>{
-        alert('Thanks! We received your request.');
-        document.getElementById('leadForm').reset();
-      }).catch(err=>{
-        alert('Error submitting form. Please call us instead.');
-      });
-    });
+    // i18n dictionaries (EN/中文)
+    var i18n = {
+      en: {
+        navServices:'Services', navPricing:'Pricing', quoteTop:'Get a Fast Quote',
+        h1:'EV Chargers, Tesla Integrations & Smart Lighting — installed cleanly, fast, and to code',
+        hero:'Serving Seattle, Redmond, Bellevue, and Kirkland. We deliver tech-forward electrical upgrades that look great and work flawlessly. Perfect for modern homes and busy tech professionals.',
+        ctaHero:'Get My Price', ctaPortfolio:'See Recent Installs',
+        services:'Smart Home Upgrade Services',
+        svc_ev:'Level 2 EV Charger Installation', svc_ev_sub:'Tesla Wall Connector, ChargePoint, Emporia & more', svc_ev_li1:'Load calculation, breaker sizing, and to-code wiring', svc_ev_li2:'Neat surface or in-wall conduit runs', svc_ev_li3:'Optional load management devices for limited capacity',
+        svc_tesla:'Tesla Integrations', svc_tesla_sub:'Wall Connector, Powerwall coordination, app setup', svc_tesla_li1:'Seamless pairing and commissioning', svc_tesla_li2:'Panel labeling and documentation included', svc_tesla_li3:'Utility coordination when service upgrades are needed',
+        svc_light:'Smart Lighting & Controls', svc_light_sub:'Lutron, Caséta, Philips Hue, dimmers & scenes', svc_light_li1:'Room-by-room scene design & tuning', svc_light_li2:'Voice & app control with HomeKit/Alexa/Google', svc_light_li3:'Clean wall plates & designer finishes',
+        process:'Simple, Transparent Process', proc1:'1) Fast Assessment', proc1p:'Send photos of your panel, charger location, and driveway/garage. We quote quickly with a clear scope.', proc2:'2) Permit & Schedule', proc2p:'We handle permit paperwork (as needed) and coordinate the day that works for you.', proc3:'3) Clean Install', proc3p:'Neat conduit runs, labeled breakers, and commissioning. We walk through everything with you.',
+        portfolio:'Recent Installs', cap1:'Tesla Wall Connector with tidy conduit and labeling', cap2:'Lutron dimmers with evening scene preset', cap3:'Garage EV charger + updated panel schedule',
+        pricing:'Transparent Pricing', price1:'Level 2 EV Charger (typical)', price1p:'With existing capacity and short run*.', price1li1:'Site assessment & load calc', price1li2:'Dedicated breaker & wiring to charger', price1li3:'Commissioning & walkthrough', price1note:'*Final price depends on distance, wall type, attic/crawl access, and panel capacity.',
+        price2:'Panel Upgrade / Load Management', price2p:'Custom quoted after assessment.', price2li1:'200A main panel upgrades', price2li2:'Smart load-shedding devices', price2li3:'Utility & inspection coordination', bundle:'Looking to bundle lighting upgrades or a Tesla integration? Ask about package pricing for multi-scope installs.',
+        areas:'Serving Seattle & Eastside',
+        reviews:'What Clients Say',
+        faq:'FAQ', faq1q:'Do you help choose the right charger?', faq1a:'Yes. We recommend based on your vehicle(s), panel capacity, and app preferences (Tesla, ChargePoint, Emporia, etc.).', faq2q:'Is a permit required?', faq2a:'Most EV circuits require an electrical permit. We handle it and schedule inspections when needed.', faq3q:'How do you keep the install looking clean?', faq3a:'We use tidy conduit runs, secure strapping, proper bends, and label your panel schedule. We discuss concealed vs. surface routes during quoting.',
+        quote:'Get a Fast Quote',
+        lblName:'Full Name', lblPhone:'Phone', lblEmail:'Email', lblCity:'City', lblDetails:'Project Details',
+        optEV:'EV Charger', optTesla:'Tesla Integration', optLight:'Smart Lighting', optPanel:'Panel Upgrade',
+        btnQuote:'Get My Price', orCall:'or call (206) 681‑0020', fastest:'What to include for the fastest quote', fast1:'Photos of main panel (with door open) and subpanel if any', fast2:'Where you want the charger mounted; approximate wire distance', fast3:'Attic/crawlspace access info; finished vs. unfinished walls', privacy:'We never share your info.（我们不会泄露您的信息）'
+      },
+      zh: {
+        navServices:'服务项目', navPricing:'价格', quoteTop:'快速报价',
+        h1:'电动车充电桩、特斯拉集成与智能照明 —— 干净施工、效率快捷、严格按规范',
+        hero:'服务范围：西雅图、雷德蒙德、贝尔维尤、柯克兰。我们提供面向科技家庭的电气升级，外观整洁、稳定可靠。',
+        ctaHero:'获取报价', ctaPortfolio:'查看近期案例',
+        services:'智能家居升级服务',
+        svc_ev:'二级EV充电桩安装', svc_ev_sub:'特斯拉Wall Connector、ChargePoint、Emporia等', svc_ev_li1:'负载计算、断路器选型与合规布线', svc_ev_li2:'明管或暗管整洁走线', svc_ev_li3:'容量受限时的负载管理方案',
+        svc_tesla:'特斯拉集成', svc_tesla_sub:'Wall Connector、Powerwall联动与App设置', svc_tesla_li1:'无缝配对与调试', svc_tesla_li2:'电箱标签与交付文档', svc_tesla_li3:'需要更改容量时的公用事业协调',
+        svc_light:'智能照明与控制', svc_light_sub:'Lutron、Caséta、Philips Hue、调光与场景', svc_light_li1:'按空间设计与调校照明场景', svc_light_li2:'支持HomeKit/Alexa/Google语音与App控制', svc_light_li3:'整洁墙面面板与设计化外观',
+        process:'流程简单 · 透明', proc1:'1) 快速评估', proc1p:'发送电箱、充电桩位置与车库/车道照片；我们快速给出清晰报价。', proc2:'2) 审批与排期', proc2p:'按需处理电气许可，并协调合适的施工日期。', proc3:'3) 干净施工', proc3p:'整洁走线、断路器标注与调试；交付前现场讲解。',
+        portfolio:'近期安装案例', cap1:'特斯拉充电桩整洁明管与标签', cap2:'Lutron调光与夜间场景', cap3:'车库充电位 + 更新后的电箱清单',
+        pricing:'价格说明', price1:'二级EV充电桩（常规）', price1p:'在现有容量并且走线距离较短的情况下*。', price1li1:'现场评估与负载计算', price1li2:'专用回路与至充电桩布线', price1li3:'调试与使用讲解', price1note:'*最终价格会随距离、墙体类型、阁楼/爬行空间可达性及容量而变化。',
+        price2:'电箱升级 / 负载管理', price2p:'现场评估后提供定制报价。', price2li1:'200A主电箱升级', price2li2:'智能负载切换设备', price2li3:'公用事业与验收协调', bundle:'想把智能照明或特斯拉集成一起做？可咨询多项目打包价。',
+        areas:'服务区域（西雅图及东区）',
+        reviews:'客户评价',
+        faq:'常见问题', faq1q:'你们会帮我选择合适的充电桩吗？', faq1a:'会。我们会根据车辆数量、配电容量与App偏好（Tesla、ChargePoint、Emporia等）给出建议。', faq2q:'是否一定需要办理许可？', faq2a:'多数EV回路需要电气许可；需要时我们会统一办理并安排验收。', faq3q:'如何保证安装外观整洁？', faq3a:'规范走线、牢固固定与合理弯管，并在电箱清单上清晰标注；同时会讨论明管/暗管走线方案。',
+        quote:'快速报价',
+        lblName:'姓名', lblPhone:'电话', lblEmail:'邮箱', lblCity:'城市', lblDetails:'项目细节',
+        optEV:'EV充电桩', optTesla:'特斯拉集成', optLight:'智能照明', optPanel:'电箱升级',
+        btnQuote:'获取报价', orCall:'或致电 (206) 681‑0020', fastest:'为了更快报价，建议提供', fast1:'主电箱（打开门）与分电箱照片', fast2:'充电桩预装位置与大致走线距离', fast3:'阁楼/爬行空间信息；成品墙/非成品墙', privacy:'我们不会泄露您的信息'
+      }
+    };
 
-    // Language toggle (basic)
-    document.getElementById('langToggle').addEventListener('click',function(){
-      var html=document.querySelector('html');
-      if(html.lang==='en'){
-        html.lang='zh-CN';
-        alert('切换到中文版本（这里您可以加载中文文本）');
-      } else {
-        html.lang='en';
-        alert('Switched to English version');
+    function setText(id, text){ var el=document.getElementById(id); if(el&&text!==undefined) el.textContent=text; }
+
+    function applyLang(lang){
+      var t=i18n[lang]||i18n.en;
+      setText('nav-services', t.navServices);
+      setText('nav-pricing', t.navPricing);
+      document.getElementById('cta-top').textContent = t.quoteTop;
+      setText('h1', t.h1);
+      setText('hero-p', t.hero);
+      setText('cta-hero', t.ctaHero);
+      setText('cta-portfolio', t.ctaPortfolio);
+      setText('labelServices', t.services);
+      setText('svc-ev', t.svc_ev); setText('svc-ev-sub', t.svc_ev_sub); setText('svc-ev-li1', t.svc_ev_li1); setText('svc-ev-li2', t.svc_ev_li2); setText('svc-ev-li3', t.svc_ev_li3);
+      setText('svc-tesla', t.svc_tesla); setText('svc-tesla-sub', t.svc_tesla_sub); setText('svc-tesla-li1', t.svc_tesla_li1); setText('svc-tesla-li2', t.svc_tesla_li2); setText('svc-tesla-li3', t.svc_tesla_li3);
+      setText('svc-light', t.svc_light); setText('svc-light-sub', t.svc_light_sub); setText('svc-light-li1', t.svc_light_li1); setText('svc-light-li2', t.svc_light_li2); setText('svc-light-li3', t.svc_light_li3);
+      setText('labelProcess', t.process); setText('proc1', t.proc1); setText('proc1p', t.proc1p); setText('proc2', t.proc2); setText('proc2p', t.proc2p); setText('proc3', t.proc3); setText('proc3p', t.proc3p);
+      setText('labelPortfolio', t.portfolio); setText('cap1', t.cap1); setText('cap2', t.cap2); setText('cap3', t.cap3);
+      setText('labelPricing', t.pricing); setText('price1', t.price1); setText('price1p', t.price1p); setText('price1li1', t.price1li1); setText('price1li2', t.price1li2); setText('price1li3', t.price1li3); setText('price1note', t.price1note);
+      setText('price2', t.price2); setText('price2p', t.price2p); setText('price2li1', t.price2li1); setText('price2li2', t.price2li2); setText('price2li3', t.price2li3); setText('bundle', t.bundle);
+      setText('labelAreas', t.areas); setText('labelReviews', t.reviews); setText('labelFAQ', t.faq);
+      setText('faq1q', t.faq1q); setText('faq1a', t.faq1a); setText('faq2q', t.faq2q); setText('faq2a', t.faq2a); setText('faq3q', t.faq3q); setText('faq3a', t.faq3a);
+      setText('labelQuote', t.quote); setText('lblName', t.lblName); setText('lblPhone', t.lblPhone); setText('lblEmail', t.lblEmail); setText('lblCity', t.lblCity); setText('lblDetails', t.lblDetails);
+      setText('optEV', t.optEV); setText('optTesla', t.optTesla); setText('optLight', t.optLight); setText('optPanel', t.optPanel);
+      setText('cta-form', t.btnQuote); setText('orCall', t.orCall); setText('fastest', t.fastest); setText('fast1', t.fast1); setText('fast2', t.fast2); setText('fast3', t.fast3); setText('privacy', t.privacy);
+      var toggle=document.getElementById('langToggle'); if(toggle) toggle.textContent = lang==='zh' ? 'EN / 中' : '中 / EN';
+      localStorage.setItem('oink_lang',lang);
+      document.documentElement.lang = (lang==='zh' ? 'zh-CN' : 'en');
+    }
+
+    var currentLang = localStorage.getItem('oink_lang') || 'en';
+    applyLang(currentLang);
+    var langBtn=document.getElementById('langToggle');
+    if(langBtn){
+      langBtn.addEventListener('click', function(){
+        currentLang = currentLang==='en' ? 'zh' : 'en';
+        applyLang(currentLang);
+      });
+    }
+
+    // Google Sheets submission via Apps Script Web App
+    // 1) Create a Google Sheet, then Apps Script: Extensions → Apps Script.
+    // 2) Paste the doPost code from the comment at the bottom of this file.
+    // 3) Deploy as Web App: Execute as Me; Access: Anyone with the link.
+    // 4) Paste the Web App URL into the form attribute data-script-url="..." below.
+    var form=document.getElementById('leadForm');
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      var name=document.getElementById('name').value.trim();
+      var phone=document.getElementById('phone').value.trim();
+      if(!name||!phone){
+        alert(currentLang==='zh'?'请填写姓名和电话':'Please include your name and phone.');
+        return;
+      }
+      var scriptURL=form.dataset.scriptUrl;
+      if(!scriptURL){
+        alert(currentLang==='zh'?'缺少Google表单地址：请在表单标签 data-script-url 中填入你的Apps Script地址':'Missing Google Sheets URL: set the Apps Script Web App in data-script-url on the form.');
+        return;
+      }
+      var fd=new FormData(form);
+      fd.append('timestamp', new Date().toISOString());
+      try{
+        // Using no-cors to avoid CORS issues; success assumed if no exception
+        await fetch(scriptURL,{ method:'POST', body:fd, mode:'no-cors' });
+        if(window.dataLayer){ window.dataLayer.push({event:'oinksmart_lead_submit'}); }
+        form.reset();
+        alert(currentLang==='zh'?'提交成功！我们会尽快联系您。':'Thanks! We\'ll reach out shortly.');
+      }catch(err){
+        console.error(err);
+        alert(currentLang==='zh'?'提交失败，请稍后重试。':'Submission failed. Please try again.');
       }
     });
   </script>
+
+  <noscript>
+    <div class="container"><p class="tiny">JavaScript is disabled. The page works, but FAQ toggles, i18n, and form enhancements are limited.</p></div>
+  </noscript>
+
+  <!-- Apps Script (Google Sheets) — paste in your Sheet's Apps Script editor
+  function doPost(e) {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var sheet = ss.getSheetByName('Leads') || ss.insertSheet('Leads');
+    var fields = ['timestamp','name','phone','email','city','services','details','campaign','utm_source'];
+    if (sheet.getLastRow() === 0) sheet.appendRow(fields);
+    var data = e.parameter || {};
+    var services = e.parameters && e.parameters.services ? e.parameters.services.join(', ') : (data.services || '');
+    var row = [
+      data.timestamp || new Date().toISOString(),
+      data.name || '',
+      data.phone || '',
+      data.email || '',
+      data.city || '',
+      services,
+      data.details || '',
+      data.campaign || '',
+      data.utm_source || ''
+    ];
+    sheet.appendRow(row);
+    return ContentService.createTextOutput('OK').setMimeType(ContentService.MimeType.TEXT);
+  }
+  -->
 </body>
 </html>
