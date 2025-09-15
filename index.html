@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OinkSmart Homes | EV Chargers, Tesla Integrations & Smart Lighting in Seattle</title>
+  <meta name="description" content="OinkSmart Homes brings tech-forward upgrades to Seattle: EV charger installs, Tesla integrations, and smart lighting controls. Licensed, bonded, insured. Fast quotes & clean installs for modern living." />
+  <link rel="canonical" href="https://www.example.com/oinksmart-homes" />
+  <meta name="robots" content="index,follow" />
+  <!-- (head meta unchanged) -->
+  <style>
+    /* (styles unchanged) */
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="OinkSmart Homes home">
+        <svg viewBox="0 0 48 48" role="img" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="22" stroke="currentColor" opacity=".25" />
+          <path d="M16 26c0-6 4.5-10 10-10 4.5 0 6 2 8 3l4-1-2 5c0 7-5 11-12 11s-8-4-8-8Z" fill="currentColor" opacity=".85" />
+          <circle cx="26" cy="25" r="2" fill="#0b0c10"/>
+        </svg>
+        <span>OinkSmart Homes</span>
+      </a>
+      <nav>
+        <a class="btn secondary" href="#services">Services</a>
+        <a class="btn secondary" href="#pricing">Pricing</a>
+        <a class="btn" href="#quote" id="cta-top">Get a Fast Quote</a>
+        <button id="langToggle" class="btn secondary" style="margin-left:10px">中 / EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="grid two-col">
+          <div>
+            <div class="badges" aria-label="trust badges">
+              <span class="badge">✅ Licensed • Bonded • Insured</span>
+              <span class="badge">⚡ EV • Tesla • Smart Lighting</span>
+            </div>
+            <h1>EV Chargers, Tesla Integrations & Smart Lighting —
+              <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">installed cleanly, fast, and to code</span>
+            </h1>
+            <p>Serving Seattle, Redmond, Bellevue, and Kirkland. We deliver tech-forward electrical upgrades that look great and work flawlessly. Perfect for modern homes and busy tech professionals.</p>
+            <div class="cta">
+              <a class="btn" href="#quote" id="cta-hero">Get My Price</a>
+              <a class="btn secondary" href="#portfolio">See Recent Installs</a>
+            </div>
+          </div>
+          <div class="card" aria-label="hero visual">
+            <!-- (hero image unchanged) -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES (unchanged) -->
+
+    <!-- PRICING / PROMO -->
+    <section id="pricing">
+      <div class="container">
+        <h2>Transparent Pricing</h2>
+        <div class="grid two-col" style="margin-top:14px">
+          <div class="card">
+            <h3>Level 2 EV Charger (typical)</h3>
+            <p><strong>Typical installation with existing capacity and short run*</strong>.</p>
+            <ul class="list">
+              <li><span class="dot"></span><span>Site assessment & load calc</span></li>
+              <li><span class="dot"></span><span>Dedicated breaker & wiring to charger</span></li>
+              <li><span class="dot"></span><span>Commissioning & walkthrough</span></li>
+            </ul>
+            <p class="tiny">*Final details depend on distance, wall type, attic/crawl access, and panel capacity.</p>
+          </div>
+          <div class="card">
+            <h3>Panel Upgrade / Load Management</h3>
+            <p><strong>Custom quoted</strong> after assessment.</p>
+            <ul class="list">
+              <li><span class="dot"></span><span>200A main panel upgrades</span></li>
+              <li><span class="dot"></span><span>Smart load-shedding devices</span></li>
+              <li><span class="dot"></span><span>Utility & inspection coordination</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUOTE FORM -->
+    <section id="quote">
+      <div class="container">
+        <h2>Get a Fast Quote</h2>
+        <div class="grid two-col" style="margin-top:14px">
+          <form class="card" id="leadForm" name="leadForm">
+            <!-- (inputs unchanged) -->
+            <div style="display:flex;gap:10px;align-items:center;margin-top:12px">
+              <button class="btn" type="submit" id="cta-form">Get My Price</button>
+              <span class="tiny">or call <a href="tel:+12066810020">(206) 681‑0020</a></span>
+            </div>
+            <input type="hidden" name="campaign" value="oinksmart-homes" />
+            <input type="hidden" name="utm_source" value="google-ads" />
+          </form>
+          <div class="card">
+            <h3>What to include for the fastest quote</h3>
+            <ul class="list">
+              <li><span class="dot"></span><span>Photos of main panel and charger location</span></li>
+              <li><span class="dot"></span><span>Approximate wire distance and wall type</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <!-- (footer unchanged) -->
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion unchanged
+
+    // Footer year
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Form submission to Google Sheets via Apps Script
+    document.getElementById('leadForm').addEventListener('submit',function(e){
+      e.preventDefault();
+      var data=new FormData(this);
+      fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec',{method:'POST',body:data})
+      .then(r=>r.json()).then(res=>{
+        alert('Thanks! We received your request.');
+        document.getElementById('leadForm').reset();
+      }).catch(err=>{
+        alert('Error submitting form. Please call us instead.');
+      });
+    });
+
+    // Language toggle (basic)
+    document.getElementById('langToggle').addEventListener('click',function(){
+      var html=document.querySelector('html');
+      if(html.lang==='en'){
+        html.lang='zh-CN';
+        alert('切换到中文版本（这里您可以加载中文文本）');
+      } else {
+        html.lang='en';
+        alert('Switched to English version');
+      }
+    });
+  </script>
+</body>
+</html>
